@@ -10,8 +10,7 @@ interface ingredientsProps {
     onRemove: React.MouseEventHandler;
     onAddIngredients:React.MouseEventHandler;
 }
-
-    const Ingredients: React.FC<ingredientsProps> = ({
+const Ingredients: React.FC<ingredientsProps> = ({
     image,
     ingredient    ,
     count,
@@ -20,13 +19,13 @@ interface ingredientsProps {
     onAddIngredients
 }) => {
     return (
-        <form className={"Ingredients"}>
+        <div className={"Ingredients"}>
             <img src={image} alt={ingredient} className="ingredient-image" onClick={onAddIngredients}/>
             <span className={"ingredient-name"}>{ingredient}</span>
             <span className={"ingredient-count"}>x{count}</span>
                 <span className={"ingredient-price"}>{price}Сом</span>
                 <button className={"button-Ingredients-Remove"} onClick={onRemove}>Удалить</button>
-        </form>
+        </div>
     );
 };
 
