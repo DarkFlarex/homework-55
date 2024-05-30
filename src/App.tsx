@@ -69,8 +69,7 @@ const App = () => {
                     );
                 })}
             </div>
-            <Burger
-            />
+            <Burger ingredients={ingredients}/>
             <span>Price:{totalPrice}</span>
         </>
     );
