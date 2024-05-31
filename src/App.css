@@ -4,6 +4,18 @@ body{
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 15px;
   text-align: center;
+}
+
+.container{
+  display: flex;
+  margin-top: 150px;
+  border: 1px solid silver;
+  border-radius: 5px;
+}
+
+.ingredients-list{
+  border: 1px solid silver;
+  border-radius: 5px;
 }

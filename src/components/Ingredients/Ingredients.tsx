@@ -23,8 +23,8 @@ const Ingredients: React.FC<ingredientsProps> = ({
             <img src={image} alt={ingredient} className="ingredient-image" onClick={onAddIngredients}/>
             <span className={"ingredient-name"}>{ingredient}</span>
             <span className={"ingredient-count"}>x{count}</span>
-                <span className={"ingredient-price"}>{price}Сом</span>
-                <button className={"button-Ingredients-Remove"} onClick={onRemove}>Удалить</button>
+            <span className={"ingredient-price"}>{price} Сом</span>
+            <button className={"button-Ingredients-Remove"} onClick={onRemove}>Удалить</button>
         </div>
     );
 };

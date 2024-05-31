@@ -53,24 +53,26 @@ const App = () => {
 
     return (
         <>
-            <div className="ingredients-list">
-                {ingredients.map(ingredient => {
-                    return (
-                        <Ingredients
-                            key={ingredient.id}
-                            id={ingredient.id}
-                            image={ingredient.image}
-                            onAddIngredients={() => addIngredient(ingredient.id)}
-                            ingredient={ingredient.ingredient}
-                            count={ingredient.count}
-                            price={ingredient.price}
-                            onRemove={() => removeIngredient(ingredient.id)}
-                        />
-                    );
-                })}
+            <div className={"container"}>
+                <div className="ingredients-list">
+                    {ingredients.map(ingredient => {
+                        return (
+                            <Ingredients
+                                key={ingredient.id}
+                                id={ingredient.id}
+                                image={ingredient.image}
+                                onAddIngredients={() => addIngredient(ingredient.id)}
+                                ingredient={ingredient.ingredient}
+                                count={ingredient.count}
+                                price={ingredient.price}
+                                onRemove={() => removeIngredient(ingredient.id)}
+                            />
+                        );
+                    })}
+                </div>
+                <Burger ingredients={ingredients} totalPrice={totalPrice} />
+
             </div>
-            <Burger ingredients={ingredients}/>
-            <span>Price:{totalPrice}</span>
         </>
     );
 }

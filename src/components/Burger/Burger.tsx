@@ -1,5 +1,5 @@
-import './Burger.css';
 import React from "react";
+import './Burger.css';
 
 interface Ingredient {
     id: string;
@@ -11,9 +11,16 @@ interface Ingredient {
 
 interface BurgerProps {
     ingredients: Ingredient[];
+    totalPrice: number;
 }
 
-const Burger: React.FC<BurgerProps> = ({ingredients}) => {
+const showIngredients = (countIngredient : Ingredient) => {
+    return Array.from({ length: countIngredient .count }, () => (
+        <div key={countIngredient .id} className={countIngredient .ingredient}></div>
+    ));
+}
+
+const Burger: React.FC<BurgerProps> = ({ingredients, totalPrice }) => {
     return (
         <div className="Burger">
             <div className="BreadTop">
@@ -21,9 +28,10 @@ const Burger: React.FC<BurgerProps> = ({ingredients}) => {
                 <div className="Seeds2"></div>
             </div>
             {ingredients.map(ingredient =>
-                <div key={ingredient.id} className={ingredient.ingredient}></div>
+                showIngredients(ingredient)
             )}
             <div className="BreadBottom"></div>
+            <span>Price: {totalPrice}</span>
         </div>
     );
 }
